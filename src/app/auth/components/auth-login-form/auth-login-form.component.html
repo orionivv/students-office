@@ -1,0 +1,46 @@
+<form
+  novalidate
+  [formGroup]="authForm"
+  (ngSubmit)="handleSubmit()"
+  [class.darken]="loading"
+>
+  <mat-card class="mat-elevation-z6">
+    <mat-progress-bar
+      *ngIf="loading"
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+    ></mat-progress-bar>
+
+    <mat-card-content>
+
+      <mat-form-field class="mat-full-width">
+        <input
+          matInput
+          placeholder="Логин"
+          formControlName="email"
+        >
+        <mat-error >Введите свой email</mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-full-width">
+        <input
+          matInput
+          type="password"
+          placeholder="Пароль"
+          formControlName="password"
+        >
+        <mat-error >Заполните поле </mat-error>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button
+          mat-flat-button
+          class="mat-primary"
+          type="submit"
+        >
+          Sign
+        </button>
+      </mat-card-actions>
+
+    </mat-card-content>
+  </mat-card>
+</form>

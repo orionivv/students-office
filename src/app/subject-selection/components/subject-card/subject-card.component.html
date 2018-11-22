@@ -1,0 +1,31 @@
+<mat-card
+  [class.require]="isRequered"
+  [class.full]="vacantPlaces < 1"
+
+>
+  <p>{{title}}</p>
+  <span *ngIf="!vacantPlaces && !isRequered">Нет свободных мест</span>
+  <span *ngIf="vacantPlaces && !isRequered">Свободно мест: {{vacantPlaces}}</span>
+  <div
+    class="circle-wrap"
+    *ngIf="!isRequered"
+  >
+    <svg viewBox="0 0 36 36" class="circular-chart">
+      <path class="circle-bg"
+            d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path class="circle"
+            [attr.stroke-dasharray]="(allPlaces - vacantPlaces) / allPlaces * 100 + ', 100'"
+            d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <text x="18" y="20.35" class="percentage">{{allPlaces - vacantPlaces}}</text>
+    </svg>
+  </div>
+  <div class="required" *ngIf="isRequered">
+    *
+  </div>
+</mat-card>

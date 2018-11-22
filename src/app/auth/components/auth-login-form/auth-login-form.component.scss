@@ -1,0 +1,12 @@
+mat-card {
+  width: 250px;
+  position: relative;
+}
+mat-card-actions {
+  display: flex;
+  padding-bottom: 0;
+  margin-bottom: -6px !important;
+  button {
+    margin-left: auto;
+  }
+}

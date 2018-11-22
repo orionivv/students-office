@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+  padding: 36px 40px;
+  max-width: 1200px;
+  margin: auto;
+  .column {
+    width: 50%;
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+  .title {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: #0e9adf;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    .hint {
+      text-transform: lowercase;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      opacity: 0.5;
+      font-size: 11px;
+      font-weight: 500;
+      color: #2b2d2e;
+    }
+  }
+  .card {
+    margin: 5px 0;
+    padding: 19px 26px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11);
+    border: solid 1px #e5e5e5;
+    background-color: #fff;
+    p {
+      &:last-child {
+        opacity: 0.5;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.subjects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position:relative;
+  min-height: 300px;
+}
+
+.cdk-drag-preview {
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+.empty-list {
+  width: 99%;
+  margin-top: 5px;
+  position: absolute;
+}
+
+.missing-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

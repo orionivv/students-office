@@ -7,11 +7,31 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "",
       "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
-        }
+        "@schematics/angular:class": {
+					"spec": false
+				},
+				"@schematics/angular:component": {
+					"spec": false,
+					"styleext": "scss"
+				},
+				"@schematics/angular:directive": {
+					"spec": false,
+					"prefix": ""
+				},
+				"@schematics/angular:guard": {
+					"spec": false
+				},
+				"@schematics/angular:module": {
+					"spec": false
+				},
+				"@schematics/angular:pipe": {
+					"spec": false
+				},
+				"@schematics/angular:service": {
+					"spec": false
+				}
       },
       "architect": {
         "build": {

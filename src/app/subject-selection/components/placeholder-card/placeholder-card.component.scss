@@ -1,0 +1,19 @@
+:host {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+mat-card {
+  border-radius: 4px;
+  box-shadow: none !important;
+  border: dashed 2px #0e9adf;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  height: 48px;
+
+  width: 100%;
+  padding: 0;
+}

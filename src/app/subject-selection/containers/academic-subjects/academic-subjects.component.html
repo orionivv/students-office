@@ -1,0 +1,68 @@
+<div class="wrapper">
+
+  <div class="column">
+    <p class="title">Выборочные дисциплины</p>
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="arr1"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="subjects"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="box" *ngFor="let item of arr1" cdkDrag>
+          <subject-card
+            [title]="item.text"
+            [vacantPlaces]="item.vacantPlaces"
+            [allPlaces]="item.place"
+          ></subject-card>
+        </div>
+      </div>
+  </div>
+
+  <div class="column">
+    <p class="title">
+      Программа на 1 ceместр, 5 курс
+      <span class="hint">* — обязательный предмет</span>
+    </p>
+    <div class="subjects">
+      <div class="first" *ngFor="let item of arr3">
+        <subject-card
+          [title]="item.text"
+          [vacantPlaces]="item.vacantPlaces"
+          [allPlaces]="item.place"
+          [isRequered]="true"
+        ></subject-card>
+      </div>
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="arr2"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="subjects"
+        (cdkDropListDropped)="drop($event)"
+      >
+
+        <empty-list
+          class="empty-list"
+          *ngIf="!arr2.length"
+        >
+        </empty-list>
+
+        <div class="missing-card" *ngIf="arr2.length">
+          <placeholder-card *ngFor="let i of [].constructor(5)"></placeholder-card>
+        </div>
+
+        <div class="box" *ngFor="let item of arr2" cdkDrag>
+          <subject-card
+            [title]="item.text"
+            [vacantPlaces]="item.vacantPlaces - 1"
+            [allPlaces]="item.place"
+          ></subject-card>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

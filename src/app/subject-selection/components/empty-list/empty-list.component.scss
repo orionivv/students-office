@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border-radius: 4px;
+  border: dashed 2px #0e9adf;
+  box-shadow: none !important;
+  img {
+    margin-top: auto;
+  }
+  p {
+    margin: 15px auto auto;
+    opacity: 0.6;
+    font-size: 12px;
+    line-height: 15px;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+

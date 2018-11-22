@@ -1,0 +1,14 @@
+:host {
+  height: 100%;
+}
+.drawer-container {
+  height: calc(100% - 64px);
+}
+
+mat-drawer {
+  min-width: 250px;
+}
+mat-drawer-content {
+  background-color: #f6fcff;
+}
+

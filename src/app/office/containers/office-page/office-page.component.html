@@ -1,0 +1,23 @@
+<office-header
+  (menuToogleEmitter)="toogleMenu()"
+  [isOpen]="drawer.opened"
+>
+</office-header>
+
+<mat-drawer-container
+  class="drawer-container"
+  [hasBackdrop]="'false'"
+>
+
+  <mat-drawer
+    #drawer
+    [mode]="'side'"
+  >
+    <side-drawer></side-drawer>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+</mat-drawer-container>
