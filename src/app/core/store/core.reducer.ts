@@ -3,13 +3,10 @@ import {CoreActionTypes} from './core.actions';
 export function testReducer(state = false, action): boolean {
   switch (action.type) {
 
-    case CoreActionTypes.CoreTestOn: {
-      return true;
-    }
+    // case CoreActionTypes.LogOut: {
+    //   return state;
+    // }
 
-    case CoreActionTypes.CoreTestOff: {
-      return false;
-    }
 
     default: {
       return state;

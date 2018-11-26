@@ -21,7 +21,7 @@ export function reducer(state = authInitialState, action: AuthAction): AuthState
         ...state,
         loading: false,
         error: true,
-        loaded: true,
+        // loaded: true,
       };
     }
 
@@ -30,8 +30,33 @@ export function reducer(state = authInitialState, action: AuthAction): AuthState
         ...state,
         loading: false,
         error: false,
-        loaded: true,
+        // loaded: true,
       };
+    }
+
+    case AuthActionTypes.GetUserInfo: {
+      return {
+        ...state,
+        loading: true,
+        loaded: false
+      };
+    }
+
+    case AuthActionTypes.GetUserInfoSuccess: {
+      return {
+        ...state,
+        loading: false,
+        loaded: true,
+        userInfo: action.payload,
+      };
+    }
+
+    case AuthActionTypes.GetUserInfoFailure: {
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      }
     }
 
     default: {

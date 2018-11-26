@@ -7,3 +7,4 @@ export const selectUserInfoLoaded = createSelector(authState, (state: AuthState)
 export const selectUserInfoError = createSelector(authState, (state: AuthState) => state.error);
 
 export const selectUserInfo = createSelector(authState, (state: AuthState) => state.userInfo);
+export const selectUserName = createSelector(authState, (state: AuthState) => state.userInfo && state.userInfo.name);

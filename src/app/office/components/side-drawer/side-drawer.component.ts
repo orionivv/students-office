@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'side-drawer',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideDrawerComponent implements OnInit {
 
+  @Output() logout = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  handleLogout() {
+    this.logout.emit();
+  }
 }

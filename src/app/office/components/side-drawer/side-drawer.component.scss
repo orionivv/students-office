@@ -13,6 +13,7 @@ mat-nav-list {
 }
 
 a {
+  user-select: none;
   &:last-child {
     margin-top: auto;
     border-top: solid 1px #0e9adf;

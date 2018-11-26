@@ -10,6 +10,9 @@ export enum AuthActionTypes {
   GetUserInfo =           '[Auth] Get UserInfo',
   GetUserInfoSuccess =    '[Auth] Get UserInfo Success',
   GetUserInfoFailure =    '[Auth] Get UserInfo Failure',
+  CheckUserInfo =         '[Auth] Check UserInfo',
+  CheckUserInfoComplete = '[Auth] Check UserInfo Complete',
+  CheckUserInfoEmpty =    '[Auth] Check UserInfo Empty',
 
 }
 
@@ -31,9 +34,38 @@ export class Logout implements  Action {
   readonly type = AuthActionTypes.Logout;
 }
 
+export class GetUserInfo implements  Action {
+  readonly type = AuthActionTypes.GetUserInfo;
+}
+
+export class GetUserInfoSuccess implements Action {
+  readonly type = AuthActionTypes.GetUserInfoSuccess;
+  constructor(public payload: any) {}
+}
+
+export class GetUserInfoFailure implements Action {
+  readonly type = AuthActionTypes.GetUserInfoFailure;
+}
+
+export class CheckUserInfo implements  Action {
+  readonly type = AuthActionTypes.CheckUserInfo;
+}
+export class CheckUserInfoComplete implements  Action {
+  readonly type = AuthActionTypes.CheckUserInfoComplete;
+}
+export class CheckUserInfoEmpty implements  Action {
+  readonly type = AuthActionTypes.CheckUserInfoEmpty;
+}
+
 export type AuthAction =
   | Login
   | LoginSuccess
   | LoginFailure
   | Logout
+  | GetUserInfo
+  | GetUserInfoSuccess
+  | GetUserInfoFailure
+  | CheckUserInfo
+  | CheckUserInfoComplete
+  | CheckUserInfoEmpty
   ;

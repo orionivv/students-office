@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDrag, CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {AcademicSubjectsService} from '../../services/academic-subjects.service';
+import {CoreStoreService} from '../../../core/store/core-store.service';
 
 @Component({
   selector: 'academic-subjects',
@@ -45,11 +47,14 @@ export class AcademicSubjectsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private academicSubjectsService: AcademicSubjectsService,
+    private coreStoreService: CoreStoreService
+  ) { }
 
   ngOnInit() {
+    this.coreStoreService.getActionsHeaderClick().subscribe(s => console.log('cklick', s));
   }
-
 
 
   drop(event: CdkDragDrop<string[]>) {

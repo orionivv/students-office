@@ -12,7 +12,7 @@ const cookieOptions = {
 };
 
 router.post('/login', async ctx => {
-  // console.log(ctx);
+
   ctx.status = 200;
   ctx.cookies.set(cookie.session_name, "idSession", cookieOptions);
   ctx.body = {
@@ -24,5 +24,18 @@ router.post('/login', async ctx => {
       group: 'string'
     }
 	};
+});
+
+router.get('/infoById', async ctx => {
+  console.log('infoById +++', ctx)
+
+
+  ctx.body = {
+    status: 200,
+    data: {
+      name: 'Vlad Iliev',
+      id: 1525,
+    }
+  };
 });
 module.exports = router;

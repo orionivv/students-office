@@ -14,4 +14,8 @@ export class AuthApiService {
   login(body) {
     return this.http.post(`${this.authUrl}/login`, body);
   }
+
+  userInfo() {
+    return this.http.get(`${this.authUrl}/infoById`);
+  }
 }

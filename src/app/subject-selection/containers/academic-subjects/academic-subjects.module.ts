@@ -5,6 +5,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {SubjectCardModule} from '../../components/subject-card/subject-card.module';
 import {PlaceholderCardModule} from '../../components/placeholder-card/placeholder-card.module';
 import {EmptyListModule} from '../../components/empty-list/empty-list.module';
+import {AcademicSubjectsService} from '../../services/academic-subjects.service';
 
 @NgModule({
   imports: [
@@ -12,9 +13,10 @@ import {EmptyListModule} from '../../components/empty-list/empty-list.module';
     DragDropModule,
     SubjectCardModule,
     PlaceholderCardModule,
-    EmptyListModule
+    EmptyListModule,
   ],
-  declarations: [AcademicSubjectsComponent]
+  declarations: [AcademicSubjectsComponent],
+  providers: [AcademicSubjectsService],
 })
 export class AcademicSubjectsModule { }
 

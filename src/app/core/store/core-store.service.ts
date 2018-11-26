@@ -1,32 +1,29 @@
 import { Injectable } from '@angular/core';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {ICoreState} from './core.state';
 import * as Action from './core.actions';
-import * as Selector from './core.selectors';
+import {CoreEffects} from './core.effects';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoreStoreService {
 
-  constructor(private store$: Store<ICoreState>) { }
+  constructor(
+    private store$: Store<ICoreState>,
+    private effects: CoreEffects
+  ) { }
 
   private dispatchAction(action: Action.CoreActions) {
     this.store$.dispatch(action);
   }
-
-  dispatchTestOn() {
-    this.dispatchAction(new Action.CoreTestOn());
-  }
-  dispatchTestOff() {
-    this.dispatchAction(new Action.CoreTestOff());
+  
+  dispatchHeaderActionBtnClick() {
+    this.dispatchAction(new Action.HeaderActionBtnClick());
   }
 
-
-  getTestStatus() {
-    return this.store$.pipe(
-      select(Selector.selectTestStatus)
-    );
+  getActionsHeaderClick() {
+    return this.effects.HeaderActionBtnClick$;
   }
 
 }

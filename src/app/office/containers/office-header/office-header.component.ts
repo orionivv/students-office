@@ -1,4 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CoreStoreService} from '../../../core/store/core-store.service';
+import {AuthStoreService} from '../../../auth/store/auth-store.service';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'office-header',
@@ -11,10 +14,16 @@ export class OfficeHeaderComponent implements OnInit {
   @Output() menuToogleEmitter = new EventEmitter();
 
   showActionBtn = true;
+  name: string;
 
-  constructor() { }
+  constructor(
+    private coreStoreService: CoreStoreService,
+    private authStoreService: AuthStoreService,
+  ) { }
 
   ngOnInit() {
+    this.authStoreService.dispatchCheckUserInfo();
+    this.authStoreService.selectUserName().subscribe(name => this.name = name);
   }
 
   menuToogle() {
@@ -22,7 +31,7 @@ export class OfficeHeaderComponent implements OnInit {
   }
 
   actionBtn() {
-    console.log('click action')
+    this.coreStoreService.dispatchHeaderActionBtnClick();
   }
 
 }

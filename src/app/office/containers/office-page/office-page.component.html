@@ -13,7 +13,9 @@
     #drawer
     [mode]="'side'"
   >
-    <side-drawer></side-drawer>
+    <side-drawer
+      (logout)="logout()"
+    ></side-drawer>
   </mat-drawer>
 
   <mat-drawer-content>

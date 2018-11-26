@@ -5,6 +5,7 @@ const cors = require('@koa/cors');
 const Router = require('koa-router');
 
 const ProxyAuth = require('./routes/auth.js');
+const ProxySubjects = require('./routes/subjects');
 
 const app = new Koa();
 const router = new Router();
@@ -34,6 +35,7 @@ app.use(async (ctx, next) => {
 
 
 app.use(ProxyAuth.routes());
+app.use(ProxySubjects.routes());
 
 app.listen(3000, () => {
 	console.log(`Listening on: 3000 port`);

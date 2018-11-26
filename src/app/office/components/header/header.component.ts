@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   @Input() showActionBtn: boolean;
 
   @Output() menuToogle = new EventEmitter();
-  @Output() actionBtnBlick = new EventEmitter();
+  @Output() actionBtnClick = new EventEmitter();
 
   constructor() { }
 
@@ -21,5 +21,9 @@ export class HeaderComponent implements OnInit {
 
   handleMenuToogle() {
     this.menuToogle.emit();
+  }
+
+  handleActionBtnClick() {
+    this.actionBtnClick.emit();
   }
 }

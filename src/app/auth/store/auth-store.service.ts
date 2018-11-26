@@ -18,10 +18,30 @@ export class AuthStoreService {
   dispatchLogin(data) {
     this.dispatchAction(new Action.Login(data));
   }
+  dispatchLogout() {
+    this.dispatchAction(new Action.Logout());
+  }
+  dispatchGetUserInfo() {
+    this.dispatchAction(new Action.GetUserInfo());
+  }
+  dispatchCheckUserInfo() {
+    this.dispatchAction(new Action.CheckUserInfo());
+  }
+
 
   selectAuthLoading() {
     return this.store$.pipe(
       select(Selector.selectUserInfoLoading)
+    );
+  }
+  selectUserName() {
+    return this.store$.pipe(
+      select(Selector.selectUserName)
+    );
+  }
+  selectUserInfo() {
+    return this.store$.pipe(
+      select(Selector.selectUserInfo)
     );
   }
 }
