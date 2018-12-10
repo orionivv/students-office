@@ -8,8 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SubjectCardComponent implements OnInit {
 
   @Input() title: string;
-  @Input() vacantPlaces: number;
-  @Input() allPlaces: number;
+  @Input() vacantPlaces?: string;
+  @Input() allPlaces?: string;
   @Input() isRequered?: boolean;
 
   constructor() { }

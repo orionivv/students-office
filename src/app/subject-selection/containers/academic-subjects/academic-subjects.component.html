@@ -1,16 +1,15 @@
 <div class="wrapper">
-
   <div class="column">
     <p class="title">Выборочные дисциплины</p>
       <div
         cdkDropList
         #todoList="cdkDropList"
-        [cdkDropListData]="arr1"
+        [cdkDropListData]="optional"
         [cdkDropListConnectedTo]="[doneList]"
         class="subjects"
         (cdkDropListDropped)="drop($event)"
       >
-        <div class="box" *ngFor="let item of arr1" cdkDrag>
+        <div class="box" *ngFor="let item of optional" cdkDrag>
           <subject-card
             [title]="item.text"
             [vacantPlaces]="item.vacantPlaces"
@@ -26,11 +25,9 @@
       <span class="hint">* — обязательный предмет</span>
     </p>
     <div class="subjects">
-      <div class="first" *ngFor="let item of arr3">
+      <div class="first" *ngFor="let item of require">
         <subject-card
-          [title]="item.text"
-          [vacantPlaces]="item.vacantPlaces"
-          [allPlaces]="item.place"
+          [title]="item"
           [isRequered]="true"
         ></subject-card>
       </div>
