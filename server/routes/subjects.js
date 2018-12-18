@@ -5,7 +5,7 @@ const router = new Router({
 });
 
 
-router.post('/bySpecialty', async ctx => {
+router.get('/bySpecialty', async ctx => {
 
 
 
